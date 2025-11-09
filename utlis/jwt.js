@@ -11,9 +11,9 @@ export const signJWT = (obj) =>{
 }
 export const verifyJWT = (token) =>{
     try {
-       jwt.verify(token, process.env.JWT_SECRET) 
+       return jwt.verify(token, process.env.JWT_SECRET) 
     } catch (error) {
-        console.log(error.message);
+       return error.message
         
     }
 };

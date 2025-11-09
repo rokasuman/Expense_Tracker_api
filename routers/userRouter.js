@@ -87,7 +87,8 @@ router.post("/login", async(req,res,next)=>{
 // get a user form the jwt
 router.get('/',auth,(req,res,next)=>{
     try {
-        const user = req.userInfo
+        
+        const user = req.userInfo;
 
         //1. recive the token
         //2. create a auth middleware 

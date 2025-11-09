@@ -9,6 +9,19 @@ THIS financial app is made in using mern stack. This application will show the i
 - signin
 - user can calculate thier income and how how much they have expend with graph 
 
+## logout 
+1. on logout click, delete `access jwt` token from the `localStorage`
+2. Reset user object from the state 
+3. redirect user to login page
+
+## Auto-login
+This feature allows user to login only one time a day and use system for a day without needing to login again and again 
+ 1. check if the user exist, if doesnot then call the auto login function 
+ 2. Auto-login functions:
+  - check if the `accessJWT` exist, if so, call getuser api to get users, else do nothing
+  - mount user to the state
+  - redirect to the dashboard
+
 
 ## Technology 
 - React.js 
