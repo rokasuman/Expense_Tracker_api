@@ -2,18 +2,17 @@
 
 THIS financial app is made in using mern stack. This application will show the income and expenses of the user.
 
-## Table of content
-- making a list of heading 
-- 
 
 ## Feature
 - login 
 - logout 
 - signin
+- user can calculate thier income and how how much they have expend with graph 
+
 
 ## Technology 
 - React.js 
-- React-router-dom
+- React-router-
 - react-tostify 
 - react- bootstrap
 - cors
@@ -43,4 +42,4 @@ THIS financial app is made in using mern stack. This application will show the i
   JWT_EXPIRES_IN = 1 HR
 
 
-# Expense_Tracker_api
+
