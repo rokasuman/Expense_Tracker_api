@@ -17,8 +17,7 @@ Content-Type: application/json
     "email" : "roka756@gmail.com",
     "password" : "12345"
 }
-
-###transcitions
+###
 
 ###LOGIN user 
 POST http://localhost:8000/api/v1/users/login
@@ -28,6 +27,20 @@ Content-Type: application/json
 
     "email" : "roka7362@gmail.com",
     "password" : "12345"
+}
+
+###
+
+###
+POST http://localhost:8000/api/v1/transactions
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdtYWlsLmNvbSIsImlhdCI6MTc2Mjg2ODIwNCwiZXhwIjoxNzYyOTU0NjA0fQ.Fld4JiQT8TH1PXsbM3hUKut7ZFVy02ZxL0y-dtx7_w8
+
+{
+    "type":"income",
+    "title":"salary",
+    "amount":"3333",
+    "tDate":"12-11-2025"
 }
 
 

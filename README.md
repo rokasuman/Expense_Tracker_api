@@ -23,6 +23,13 @@ This feature allows user to login only one time a day and use system for a day w
   - redirect to the dashboard
 
 
+## API TRANSACTION
+ 1. Create a basic controller and add the auth middleware
+ 2. Receive data and userID
+ 3. Create model and insert the Transcation 
+ 4. Response the message
+
+
 ## Technology 
 - React.js 
 - React-router-

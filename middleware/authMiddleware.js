@@ -14,7 +14,7 @@ export const auth = async(req,res,next) =>{
 
             //store the user into req header
 
-             user.password = undefined;
+            user.password = undefined;
             req.userInfo = user;
          
 

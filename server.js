@@ -17,8 +17,11 @@ app.use(cors())
 
 //api endpoint
 import userRouter from './routers/userRouter.js'
+import transcationRouter from './routers/transactionRouter.js'
+import { auth } from './middleware/authMiddleware.js'
 
 app.use("/api/v1/users",userRouter);
+app.use("/api/v1/transactions",auth,transcationRouter);
 
 app.get("/",(req,res)=>{
     res.json({
@@ -27,7 +30,7 @@ app.get("/",(req,res)=>{
     })
 })
 
-
+ 
 app.listen(PORT,error =>{
     error
     ? console.log(error)
