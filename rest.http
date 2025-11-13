@@ -34,7 +34,7 @@ Content-Type: application/json
 ###
 POST http://localhost:8000/api/v1/transactions
 Content-Type: application/json
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdtYWlsLmNvbSIsImlhdCI6MTc2Mjg2ODIwNCwiZXhwIjoxNzYyOTU0NjA0fQ.Fld4JiQT8TH1PXsbM3hUKut7ZFVy02ZxL0y-dtx7_w8
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdtYWlsLmNvbSIsImlhdCI6MTc2MzAzMjk5NiwiZXhwIjoxNzYzMTE5Mzk2fQ.LPOWx_2jEJyTCfdoWzFE9QX5_vft-1cAa9Ty-LfdqFg
 
 {
     "type":"income",
@@ -44,4 +44,7 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdt
 }
 
 
-
+###
+// getting all the transaction from the database
+GET  http://localhost:8000/api/v1/transactions
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdtYWlsLmNvbSIsImlhdCI6MTc2MzAzMjk5NiwiZXhwIjoxNzYzMTE5Mzk2fQ.LPOWx_2jEJyTCfdoWzFE9QX5_vft-1cAa9Ty-LfdqFg

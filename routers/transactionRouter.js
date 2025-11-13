@@ -1,6 +1,6 @@
 import express from 'express'
 import { insertTransaction } from '../models/user/transcation/TranscationModel.js';
- 
+ import { getTransactions } from '../models/user/transcation/TranscationModel.js';
 const router = express.Router()
 
 // insert the transcatiom
@@ -30,6 +30,29 @@ router.post("/",async (req,res, next) => {
 }
 })
 
+// return all the transaction of the user 
+
+router.get("/", async(req,res)=>{
+    try {
+        const {_id} = req.userInfo
+        console.log(_id);
+        // get all the transaction of the database
+        const transactions = await getTransactions(_id) || [];
+
+        res.json({
+            status: "success",
+            message:"here are the transactions",
+            transactions,
+        })
+    } catch (error) {
+        
+        console.log(error);
+        res.json({
+            status:error,
+            message: error.message
+        })
+    }
+})
 
 
 export default router;
