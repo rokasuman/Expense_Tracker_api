@@ -1,7 +1,7 @@
 import TransactionSchema from "./TransactionSchema.js";
 
 
-// inserting 
+// inserting the transactions
 
 export const insertTransaction = (obj) =>{
     return TransactionSchema(obj).save();
@@ -15,3 +15,12 @@ export const getTransactions = (userId)=>{
     return TransactionSchema.find({userId});
 
 }
+
+//delte the transaction 
+export const deleteTransaction = (userId, idsToDelete) => {
+    return TransactionSchema.deleteMany({
+        userId: userId,
+        _id: { $in: idsToDelete }
+    });
+};
+

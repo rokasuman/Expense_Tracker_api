@@ -1,6 +1,7 @@
 import express from 'express'
 import { insertTransaction } from '../models/user/transcation/TranscationModel.js';
  import { getTransactions } from '../models/user/transcation/TranscationModel.js';
+ import { deleteTransaction } from '../models/user/transcation/TranscationModel.js';
 const router = express.Router()
 
 // insert the transcatiom
@@ -30,7 +31,7 @@ router.post("/",async (req,res, next) => {
 }
 })
 
-// return all the transaction of the user 
+// read all the transaction of the user 
 
 router.get("/", async(req,res)=>{
     try {
@@ -53,6 +54,29 @@ router.get("/", async(req,res)=>{
         })
     }
 })
+
+//delete the transcation 
+router.delete("/", async (req, res) => {
+    try {
+        const ids = req.body;
+        const { _id } = req.userInfo;
+
+        const result = await deleteTransaction(_id, ids);
+
+        return res.json({
+            status: "success",
+            message: result.deletedCount + " transaction(s) have been deleted"
+        });
+    } catch (error) {
+        console.log(error);
+        return res.json({
+            status: "error",
+            message: error.message
+        });
+    }
+});
+
+
 
 
 export default router;

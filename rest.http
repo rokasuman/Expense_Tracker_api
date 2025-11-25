@@ -48,3 +48,11 @@ Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdt
 // getting all the transaction from the database
 GET  http://localhost:8000/api/v1/transactions
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdtYWlsLmNvbSIsImlhdCI6MTc2MzAzMjk5NiwiZXhwIjoxNzYzMTE5Mzk2fQ.LPOWx_2jEJyTCfdoWzFE9QX5_vft-1cAa9Ty-LfdqFg
+
+### delete 
+DELETE  http://localhost:8000/api/v1/transactions
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdtYWlsLmNvbSIsImlhdCI6MTc2NDAzNTM5OCwiZXhwIjoxNzY0MTIxNzk4fQ.i2akP35HdqPBeX1aYAQTlCKJdFNx2HA07GWCTwlnWok
+
+["6915bfead6fa601a4b52a554","6917371b519c9af5272eea6e"]
+
