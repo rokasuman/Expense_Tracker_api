@@ -7,7 +7,7 @@ import { auth } from '../middleware/authMiddleware.js';
 const router = express.Router()
 
 // User signup
-router.post("/", async (req, res) => {
+router.post("/", async (req, res,next) => {
     try {
         const { password } = req.body;
 
@@ -36,10 +36,7 @@ router.post("/", async (req, res) => {
                 message: "Error creating user. Please try again",
             });
     } catch (error) {
-        return res.json({
-            status: "error",
-            message: error.message,
-        });
+       next(error)
     }
 });
 
@@ -77,10 +74,7 @@ router.post("/login", async(req,res,next)=>{
        })
 
     } catch (error) {
-        res.status(500).json({
-            error: error.message,
-        })
-        
+      next(error)
     }
 })
 
@@ -103,10 +97,7 @@ router.get('/',auth,(req,res,next)=>{
           })
         
     } catch (error) {
-        res.status(500).json({
-            error:error.message
-        })
-        
+       next(error)
     }
 })
 

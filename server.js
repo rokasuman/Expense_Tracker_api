@@ -1,6 +1,6 @@
 import express from 'express'
 import cors from 'cors'
-
+import { errorHandler } from './middleware/ErrorMiddleware.js'
 const app = express()
 const PORT = process.env.PORT || 8000
 
@@ -28,7 +28,18 @@ app.get("/",(req,res)=>{
         message:"it is live"
         
     })
+});
+
+// 404 page not found 
+app.use ((req,res,next)=>{
+ const error = new Error ("Page Not Found")
+ error.statusCode = 404;
+ next(error)
 })
+
+
+//golbal error handler
+app.use( errorHandler )
 
  
 app.listen(PORT,error =>{

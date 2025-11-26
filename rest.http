@@ -9,7 +9,6 @@ GET http://localhost:8000/api/v1/users
 Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJva2E3MzYyQGdtYWlsLmNvbSIsImlhdCI6MTc2MjY5MDQ0MSwiZXhwIjoxNzYyNzc2ODQxfQ.sPWKkm5PjdOhWFWqE1UlZBM-rB7frngJHI7rcklAEgY
 ###
 POST http://localhost:8000/api/v1/users
-
 Content-Type: application/json
 
 {

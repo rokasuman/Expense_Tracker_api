@@ -23,17 +23,13 @@ router.post("/",async (req,res, next) => {
         message:"Unable to add the transaction"
     });
 } catch (error) {
-    console.log(error)
-    res.json({
-        status:"error",
-        message:error.message
-    });
+  next(error)
 }
 })
 
 // read all the transaction of the user 
 
-router.get("/", async(req,res)=>{
+router.get("/", async(req,res,next)=>{
     try {
         const {_id} = req.userInfo
         console.log(_id);
@@ -47,16 +43,12 @@ router.get("/", async(req,res)=>{
         })
     } catch (error) {
         
-        console.log(error);
-        res.json({
-            status:error,
-            message: error.message
-        })
+    next(error)
     }
 })
 
 //delete the transcation 
-router.delete("/", async (req, res) => {
+router.delete("/", async (req, res,next) => {
     try {
         const ids = req.body;
         const { _id } = req.userInfo;
@@ -68,11 +60,7 @@ router.delete("/", async (req, res) => {
             message: result.deletedCount + " transaction(s) have been deleted"
         });
     } catch (error) {
-        console.log(error);
-        return res.json({
-            status: "error",
-            message: error.message
-        });
+        next(error)
     }
 });
 
